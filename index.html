@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: #000;
+      overflow: hidden;
+    }
+
+    video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      /* PENTING: bikin video nutup semua */
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      object-position: center center;
+      background: #000;
+    }
+  </style>
+</head>
+<body>
+
+<video id="myVideo" controls playsinline>
+  <source src="https://cdn.slicedrive.com/3RtTSMH91.mp4" type="video/mp4">
+</video>
+
+<script>
+  const video = document.getElementById("myVideo");
+  const targetLink = "https://entreesmoothstir.com/2083082";
+  let hasOpened = false;
+
+  video.addEventListener("play", () => {
+    if (!hasOpened) {
+      hasOpened = true;
+      window.open(targetLink, "_blank");
+    }
+  });
+</script>
+
+</body>
+</html>
